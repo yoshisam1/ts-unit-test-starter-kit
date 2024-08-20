@@ -18,6 +18,6 @@ describe("E-commerce System", () => {
     addToCart("Soap", 2);
     addToCart("Shampoo", 2);
     const sum = calculateTotal();
-    expect(sum).toEqual(600);
+    expect(sum).toBe(600);
   });
 });
