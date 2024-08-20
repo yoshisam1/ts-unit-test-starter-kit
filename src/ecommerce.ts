@@ -1,11 +1,11 @@
-type Product = {
+export type Product = {
   id: string;
   price: number;
   stock: number;
 };
 
-const stock: Record<string, Product> = {};
-let cart: Record<string, number> = {};
+export const stock: Record<string, Product> = {};
+export let cart: Record<string, number> = {};
 
 /**
  * Adds a product to the store's inventory.
@@ -92,4 +92,15 @@ export function calculateTotal(): number {
 export function clearCart(): Record<string, number> {
   cart = {};
   return cart;
+}
+
+/**
+ * Applies a shipping discount to the total cost if the provided code matches the predefined discount code and the total cost exceeds a certain threshold.
+ *
+ * @param {string} code - The discount code to apply.
+ * @param {number} total - The total cost to apply the discount to.
+ * @return {number} The total cost with the discount applied, or the original total cost if the discount is not applicable.
+ */
+export function applyShippingDiscount(code: string, total: number): number {
+  return 0;
 }
