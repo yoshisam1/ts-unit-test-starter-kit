@@ -81,7 +81,8 @@ export function removeFromCart(
 export function calculateTotal(): number {
   return Object.entries(cart).reduce((total, [productId, quantity]) => {
     const product = stock[productId];
-    return total + product.price * quantity;
+    total = total + product.price * quantity;
+    return total;
   }, 0);
 }
 
@@ -95,12 +96,12 @@ export function clearCart(): Record<string, number> {
 }
 
 /**
- * Applies a shipping discount to the total cost if the provided code matches the predefined discount code and the total cost exceeds a certain threshold.
+ * Applies a shipping discount to the total cost if total cost exceeds a certain threshold.
  *
- * @param {string} code - The discount code to apply.
  * @param {number} total - The total cost to apply the discount to.
  * @return {number} The total cost with the discount applied, or the original total cost if the discount is not applicable.
  */
-// export function applyShippingDiscount(code: string, total: number): number {
+// export function applyShippingDiscount(total: number): number {
+//   // Activity 1 code here
 //   return 0;
 // }
